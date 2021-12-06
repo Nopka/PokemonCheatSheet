@@ -1,0 +1,14 @@
+C:\Users\Hugo\source\repos\PokemonCheaySheet\PokemonCheaySheet\bin\Debug\PokemonCheaySheet.exe.config
+C:\Users\Hugo\source\repos\PokemonCheaySheet\PokemonCheaySheet\bin\Debug\PokemonCheaySheet.exe
+C:\Users\Hugo\source\repos\PokemonCheaySheet\PokemonCheaySheet\bin\Debug\PokemonCheaySheet.pdb
+C:\Users\Hugo\source\repos\PokemonCheaySheet\PokemonCheaySheet\bin\Debug\XanderUI.dll
+C:\Users\Hugo\source\repos\PokemonCheaySheet\PokemonCheaySheet\obj\Debug\PokemonCheaySheet.csprojAssemblyReference.cache
+C:\Users\Hugo\source\repos\PokemonCheaySheet\PokemonCheaySheet\obj\Debug\PokemonCheaySheet.Acceuil.resources
+C:\Users\Hugo\source\repos\PokemonCheaySheet\PokemonCheaySheet\obj\Debug\PokemonCheaySheet.Efficacite_Types.resources
+C:\Users\Hugo\source\repos\PokemonCheaySheet\PokemonCheaySheet\obj\Debug\PokemonCheaySheet.Properties.Resources.resources
+C:\Users\Hugo\source\repos\PokemonCheaySheet\PokemonCheaySheet\obj\Debug\PokemonCheaySheet.csproj.GenerateResource.cache
+C:\Users\Hugo\source\repos\PokemonCheaySheet\PokemonCheaySheet\obj\Debug\PokemonCheaySheet.csproj.CoreCompileInputs.cache
+C:\Users\Hugo\source\repos\PokemonCheaySheet\PokemonCheaySheet\obj\Debug\PokemonCheaySheet.csproj.CopyComplete
+C:\Users\Hugo\source\repos\PokemonCheaySheet\PokemonCheaySheet\obj\Debug\PokemonCheaySheet.exe
+C:\Users\Hugo\source\repos\PokemonCheaySheet\PokemonCheaySheet\obj\Debug\PokemonCheaySheet.pdb
+C:\Users\Hugo\source\repos\PokemonCheaySheet\PokemonCheaySheet\obj\Debug\PokemonCheaySheet.Type_Acier.resources

@@ -1,0 +1,794 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{86DB7CFD-AB27-4690-AFA5-99A9A2FBAC42}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PokemonCheatSheet</RootNamespace>
+    <AssemblyName>PokemonCheatSheet</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>9287F036D30F0C7FE925D0C96B0841DB266A76B4</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>PokemonCheatSheet_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Chrisbanks2-Cold-Fusion-Hd-Pokemon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.112.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.112.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.112.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.112.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.112.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.112.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="XanderUI">
+      <HintPath>..\..\..\..\Documents\XanderUI-master\XanderUI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Efficacite-Types.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Efficacite-Types.Designer.cs">
+      <DependentUpon>Efficacite-Types.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Acceuil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Acceuil.Designer.cs">
+      <DependentUpon>Acceuil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PokedexDeGalar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PokedexDeGalar.Designer.cs">
+      <DependentUpon>PokedexDeGalar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PokedexDeGalarDataFINAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PokedexDeGalarDataFINAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PokedexDeGalarDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PokedexDeGalarDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PokedexDeGalarDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PokedexDeGalarDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PokedexDeGalarDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PokedexDeGalarDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PokedexDeGalarDataSetFINAL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PokedexDeGalarDataSetFINAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PokedexDeGalarDataSetREADY01.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PokedexDeGalarDataSetREADY01.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Acceuil.resx">
+      <DependentUpon>Acceuil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Efficacite-Types.resx">
+      <DependentUpon>Efficacite-Types.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PokedexDeGalar.resx">
+      <DependentUpon>PokedexDeGalar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="PokedexDeGalarDataFINAL.xsc">
+      <DependentUpon>PokedexDeGalarDataFINAL.xsd</DependentUpon>
+    </None>
+    <None Include="PokedexDeGalarDataFINAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PokedexDeGalarDataFINAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PokedexDeGalarDataFINAL.xss">
+      <DependentUpon>PokedexDeGalarDataFINAL.xsd</DependentUpon>
+    </None>
+    <None Include="PokedexDeGalarDataSet.xsc">
+      <DependentUpon>PokedexDeGalarDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PokedexDeGalarDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PokedexDeGalarDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PokedexDeGalarDataSet.xss">
+      <DependentUpon>PokedexDeGalarDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PokedexDeGalarDataSet1.xsc">
+      <DependentUpon>PokedexDeGalarDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="PokedexDeGalarDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PokedexDeGalarDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PokedexDeGalarDataSet1.xss">
+      <DependentUpon>PokedexDeGalarDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="PokedexDeGalarDataSet2.xsc">
+      <DependentUpon>PokedexDeGalarDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="PokedexDeGalarDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PokedexDeGalarDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PokedexDeGalarDataSet2.xss">
+      <DependentUpon>PokedexDeGalarDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="PokedexDeGalarDataSetFINAL.xsc">
+      <DependentUpon>PokedexDeGalarDataSetFINAL.xsd</DependentUpon>
+    </None>
+    <None Include="PokedexDeGalarDataSetFINAL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PokedexDeGalarDataSetFINAL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PokedexDeGalarDataSetFINAL.xss">
+      <DependentUpon>PokedexDeGalarDataSetFINAL.xsd</DependentUpon>
+    </None>
+    <None Include="PokedexDeGalarDataSetREADY01.xsc">
+      <DependentUpon>PokedexDeGalarDataSetREADY01.xsd</DependentUpon>
+    </None>
+    <None Include="PokedexDeGalarDataSetREADY01.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PokedexDeGalarDataSetREADY01.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PokedexDeGalarDataSetREADY01.xss">
+      <DependentUpon>PokedexDeGalarDataSetREADY01.xsd</DependentUpon>
+    </None>
+    <None Include="PokemonCheatSheet_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\acier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\combat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dragon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eau.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\electrik.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\feu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\glace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\insecte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plante.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\poison.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PokemonType.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\psy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roche.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spectre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tenebres.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fdePokemon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo_Pokémon_Épée_et_Bouclier.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Chrisbanks2-Cold-Fusion-Hd-Pokemon.ico" />
+    <Content Include="PokedexDeGalar.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\Pokemon_bdd\890.png" />
+    <None Include="Resources\Pokemon_bdd\889.png" />
+    <None Include="Resources\Pokemon_bdd\888.png" />
+    <None Include="Resources\Pokemon_bdd\887.png" />
+    <None Include="Resources\Pokemon_bdd\886.png" />
+    <None Include="Resources\Pokemon_bdd\885.png" />
+    <None Include="Resources\Pokemon_bdd\884.png" />
+    <None Include="Resources\Pokemon_bdd\883.png" />
+    <None Include="Resources\Pokemon_bdd\882.png" />
+    <None Include="Resources\Pokemon_bdd\881.png" />
+    <None Include="Resources\Pokemon_bdd\880.png" />
+    <None Include="Resources\Pokemon_bdd\879.png" />
+    <None Include="Resources\Pokemon_bdd\878.png" />
+    <None Include="Resources\Pokemon_bdd\877.png" />
+    <None Include="Resources\Pokemon_bdd\876.png" />
+    <None Include="Resources\Pokemon_bdd\875.png" />
+    <None Include="Resources\Pokemon_bdd\874.png" />
+    <None Include="Resources\Pokemon_bdd\873.png" />
+    <None Include="Resources\Pokemon_bdd\872.png" />
+    <None Include="Resources\Pokemon_bdd\871.png" />
+    <None Include="Resources\Pokemon_bdd\870.png" />
+    <None Include="Resources\Pokemon_bdd\869.png" />
+    <None Include="Resources\Pokemon_bdd\868.png" />
+    <None Include="Resources\Pokemon_bdd\867.png" />
+    <None Include="Resources\Pokemon_bdd\866.png" />
+    <None Include="Resources\Pokemon_bdd\865.png" />
+    <None Include="Resources\Pokemon_bdd\864.png" />
+    <None Include="Resources\Pokemon_bdd\863.png" />
+    <None Include="Resources\Pokemon_bdd\862.png" />
+    <None Include="Resources\Pokemon_bdd\861.png" />
+    <None Include="Resources\Pokemon_bdd\860.png" />
+    <None Include="Resources\Pokemon_bdd\859.png" />
+    <None Include="Resources\Pokemon_bdd\858.png" />
+    <None Include="Resources\Pokemon_bdd\857.png" />
+    <None Include="Resources\Pokemon_bdd\856.png" />
+    <None Include="Resources\Pokemon_bdd\855.png" />
+    <None Include="Resources\Pokemon_bdd\854.png" />
+    <None Include="Resources\Pokemon_bdd\853.png" />
+    <None Include="Resources\Pokemon_bdd\852.png" />
+    <None Include="Resources\Pokemon_bdd\851.png" />
+    <None Include="Resources\Pokemon_bdd\850.png" />
+    <None Include="Resources\Pokemon_bdd\849.png" />
+    <None Include="Resources\Pokemon_bdd\848.png" />
+    <None Include="Resources\Pokemon_bdd\847.png" />
+    <None Include="Resources\Pokemon_bdd\846.png" />
+    <None Include="Resources\Pokemon_bdd\845.png" />
+    <None Include="Resources\Pokemon_bdd\844.png" />
+    <None Include="Resources\Pokemon_bdd\843.png" />
+    <None Include="Resources\Pokemon_bdd\842.png" />
+    <None Include="Resources\Pokemon_bdd\841.png" />
+    <None Include="Resources\Pokemon_bdd\840.png" />
+    <None Include="Resources\Pokemon_bdd\839.png" />
+    <None Include="Resources\Pokemon_bdd\838.png" />
+    <None Include="Resources\Pokemon_bdd\837.png" />
+    <None Include="Resources\Pokemon_bdd\836.png" />
+    <None Include="Resources\Pokemon_bdd\835.png" />
+    <None Include="Resources\Pokemon_bdd\834.png" />
+    <None Include="Resources\Pokemon_bdd\833.png" />
+    <None Include="Resources\Pokemon_bdd\832.png" />
+    <None Include="Resources\Pokemon_bdd\831.png" />
+    <None Include="Resources\Pokemon_bdd\830.png" />
+    <None Include="Resources\Pokemon_bdd\829.png" />
+    <None Include="Resources\Pokemon_bdd\828.png" />
+    <None Include="Resources\Pokemon_bdd\827.png" />
+    <None Include="Resources\Pokemon_bdd\826.png" />
+    <None Include="Resources\Pokemon_bdd\825.png" />
+    <None Include="Resources\Pokemon_bdd\824.png" />
+    <None Include="Resources\Pokemon_bdd\823.png" />
+    <None Include="Resources\Pokemon_bdd\822.png" />
+    <None Include="Resources\Pokemon_bdd\821.png" />
+    <None Include="Resources\Pokemon_bdd\820.png" />
+    <None Include="Resources\Pokemon_bdd\819.png" />
+    <None Include="Resources\Pokemon_bdd\818.png" />
+    <None Include="Resources\Pokemon_bdd\817.png" />
+    <None Include="Resources\Pokemon_bdd\816.png" />
+    <None Include="Resources\Pokemon_bdd\815.png" />
+    <None Include="Resources\Pokemon_bdd\814.png" />
+    <None Include="Resources\Pokemon_bdd\813.png" />
+    <None Include="Resources\Pokemon_bdd\812.png" />
+    <None Include="Resources\Pokemon_bdd\811.png" />
+    <None Include="Resources\Pokemon_bdd\810.png" />
+    <None Include="Resources\Pokemon_bdd\784.png" />
+    <None Include="Resources\Pokemon_bdd\783.png" />
+    <None Include="Resources\Pokemon_bdd\782.png" />
+    <None Include="Resources\Pokemon_bdd\781.png" />
+    <None Include="Resources\Pokemon_bdd\780.png" />
+    <None Include="Resources\Pokemon_bdd\778.png" />
+    <None Include="Resources\Pokemon_bdd\777.png" />
+    <None Include="Resources\Pokemon_bdd\776.png" />
+    <None Include="Resources\Pokemon_bdd\773.png" />
+    <None Include="Resources\Pokemon_bdd\772.png" />
+    <None Include="Resources\Pokemon_bdd\771.png" />
+    <None Include="Resources\Pokemon_bdd\768.png" />
+    <None Include="Resources\Pokemon_bdd\767.png" />
+    <None Include="Resources\Pokemon_bdd\766.png" />
+    <None Include="Resources\Pokemon_bdd\765.png" />
+    <None Include="Resources\Pokemon_bdd\763.png" />
+    <None Include="Resources\Pokemon_bdd\762.png" />
+    <None Include="Resources\Pokemon_bdd\761.png" />
+    <None Include="Resources\Pokemon_bdd\760.png" />
+    <None Include="Resources\Pokemon_bdd\759.png" />
+    <None Include="Resources\Pokemon_bdd\758.png" />
+    <None Include="Resources\Pokemon_bdd\757.png" />
+    <None Include="Resources\Pokemon_bdd\756.png" />
+    <None Include="Resources\Pokemon_bdd\755.png" />
+    <None Include="Resources\Pokemon_bdd\752.png" />
+    <None Include="Resources\Pokemon_bdd\751.png" />
+    <None Include="Resources\Pokemon_bdd\750.png" />
+    <None Include="Resources\Pokemon_bdd\749.png" />
+    <None Include="Resources\Pokemon_bdd\748.png" />
+    <None Include="Resources\Pokemon_bdd\747.png" />
+    <None Include="Resources\Pokemon_bdd\746.png" />
+    <None Include="Resources\Pokemon_bdd\743.png" />
+    <None Include="Resources\Pokemon_bdd\742.png" />
+    <None Include="Resources\Pokemon_bdd\738.png" />
+    <None Include="Resources\Pokemon_bdd\737.png" />
+    <None Include="Resources\Pokemon_bdd\736.png" />
+    <None Include="Resources\Pokemon_bdd\715.png" />
+    <None Include="Resources\Pokemon_bdd\714.png" />
+    <None Include="Resources\Pokemon_bdd\713.png" />
+    <None Include="Resources\Pokemon_bdd\712.png" />
+    <None Include="Resources\Pokemon_bdd\711.png" />
+    <None Include="Resources\Pokemon_bdd\710.png" />
+    <None Include="Resources\Pokemon_bdd\709.png" />
+    <None Include="Resources\Pokemon_bdd\708.png" />
+    <None Include="Resources\Pokemon_bdd\706.png" />
+    <None Include="Resources\Pokemon_bdd\705.png" />
+    <None Include="Resources\Pokemon_bdd\704.png" />
+    <None Include="Resources\Pokemon_bdd\701.png" />
+    <None Include="Resources\Pokemon_bdd\700.png" />
+    <None Include="Resources\Pokemon_bdd\695.png" />
+    <None Include="Resources\Pokemon_bdd\694.png" />
+    <None Include="Resources\Pokemon_bdd\689.png" />
+    <None Include="Resources\Pokemon_bdd\688.png" />
+    <None Include="Resources\Pokemon_bdd\687.png" />
+    <None Include="Resources\Pokemon_bdd\686.png" />
+    <None Include="Resources\Pokemon_bdd\685.png" />
+    <None Include="Resources\Pokemon_bdd\684.png" />
+    <None Include="Resources\Pokemon_bdd\683.png" />
+    <None Include="Resources\Pokemon_bdd\682.png" />
+    <None Include="Resources\Pokemon_bdd\681.png" />
+    <None Include="Resources\Pokemon_bdd\680.png" />
+    <None Include="Resources\Pokemon_bdd\679.png" />
+    <None Include="Resources\Pokemon_bdd\678.png" />
+    <None Include="Resources\Pokemon_bdd\677.png" />
+    <None Include="Resources\Pokemon_bdd\675.png" />
+    <None Include="Resources\Pokemon_bdd\674.png" />
+    <None Include="Resources\Pokemon_bdd\660.png" />
+    <None Include="Resources\Pokemon_bdd\659.png" />
+    <None Include="Resources\Pokemon_bdd\635.png" />
+    <None Include="Resources\Pokemon_bdd\634.png" />
+    <None Include="Resources\Pokemon_bdd\633.png" />
+    <None Include="Resources\Pokemon_bdd\632.png" />
+    <None Include="Resources\Pokemon_bdd\631.png" />
+    <None Include="Resources\Pokemon_bdd\630.png" />
+    <None Include="Resources\Pokemon_bdd\629.png" />
+    <None Include="Resources\Pokemon_bdd\628.png" />
+    <None Include="Resources\Pokemon_bdd\627.png" />
+    <None Include="Resources\Pokemon_bdd\625.png" />
+    <None Include="Resources\Pokemon_bdd\624.png" />
+    <None Include="Resources\Pokemon_bdd\623.png" />
+    <None Include="Resources\Pokemon_bdd\622.png" />
+    <None Include="Resources\Pokemon_bdd\618ga.png" />
+    <None Include="Resources\Pokemon_bdd\617.png" />
+    <None Include="Resources\Pokemon_bdd\616.png" />
+    <None Include="Resources\Pokemon_bdd\614.png" />
+    <None Include="Resources\Pokemon_bdd\613.png" />
+    <None Include="Resources\Pokemon_bdd\612.png" />
+    <None Include="Resources\Pokemon_bdd\611.png" />
+    <None Include="Resources\Pokemon_bdd\610.png" />
+    <None Include="Resources\Pokemon_bdd\609.png" />
+    <None Include="Resources\Pokemon_bdd\608.png" />
+    <None Include="Resources\Pokemon_bdd\607.png" />
+    <None Include="Resources\Pokemon_bdd\606.png" />
+    <None Include="Resources\Pokemon_bdd\605.png" />
+    <None Include="Resources\Pokemon_bdd\601.png" />
+    <None Include="Resources\Pokemon_bdd\600.png" />
+    <None Include="Resources\Pokemon_bdd\599.png" />
+    <None Include="Resources\Pokemon_bdd\598.png" />
+    <None Include="Resources\Pokemon_bdd\597.png" />
+    <None Include="Resources\Pokemon_bdd\596.png" />
+    <None Include="Resources\Pokemon_bdd\595.png" />
+    <None Include="Resources\Pokemon_bdd\593.png" />
+    <None Include="Resources\Pokemon_bdd\592.png" />
+    <None Include="Resources\Pokemon_bdd\589.png" />
+    <None Include="Resources\Pokemon_bdd\588.png" />
+    <None Include="Resources\Pokemon_bdd\584.png" />
+    <None Include="Resources\Pokemon_bdd\583.png" />
+    <None Include="Resources\Pokemon_bdd\582.png" />
+    <None Include="Resources\Pokemon_bdd\579.png" />
+    <None Include="Resources\Pokemon_bdd\578.png" />
+    <None Include="Resources\Pokemon_bdd\577.png" />
+    <None Include="Resources\Pokemon_bdd\576.png" />
+    <None Include="Resources\Pokemon_bdd\575.png" />
+    <None Include="Resources\Pokemon_bdd\574.png" />
+    <None Include="Resources\Pokemon_bdd\573.png" />
+    <None Include="Resources\Pokemon_bdd\572.png" />
+    <None Include="Resources\Pokemon_bdd\569.png" />
+    <None Include="Resources\Pokemon_bdd\568.png" />
+    <None Include="Resources\Pokemon_bdd\563.png" />
+    <None Include="Resources\Pokemon_bdd\562ga.png" />
+    <None Include="Resources\Pokemon_bdd\561.png" />
+    <None Include="Resources\Pokemon_bdd\559.png" />
+    <None Include="Resources\Pokemon_bdd\558.png" />
+    <None Include="Resources\Pokemon_bdd\557.png" />
+    <None Include="Resources\Pokemon_bdd\556.png" />
+    <None Include="Resources\Pokemon_bdd\555ga.png" />
+    <None Include="Resources\Pokemon_bdd\554ga.png" />
+    <None Include="Resources\Pokemon_bdd\550.png" />
+    <None Include="Resources\Pokemon_bdd\547.png" />
+    <None Include="Resources\Pokemon_bdd\546.png" />
+    <None Include="Resources\Pokemon_bdd\539.png" />
+    <None Include="Resources\Pokemon_bdd\538.png" />
+    <None Include="Resources\Pokemon_bdd\537.png" />
+    <None Include="Resources\Pokemon_bdd\536.png" />
+    <None Include="Resources\Pokemon_bdd\535.png" />
+    <None Include="Resources\Pokemon_bdd\534.png" />
+    <None Include="Resources\Pokemon_bdd\533.png" />
+    <None Include="Resources\Pokemon_bdd\532.png" />
+    <None Include="Resources\Pokemon_bdd\530.png" />
+    <None Include="Resources\Pokemon_bdd\529.png" />
+    <None Include="Resources\Pokemon_bdd\528.png" />
+    <None Include="Resources\Pokemon_bdd\527.png" />
+    <None Include="Resources\Pokemon_bdd\526.png" />
+    <None Include="Resources\Pokemon_bdd\525.png" />
+    <None Include="Resources\Pokemon_bdd\524.png" />
+    <None Include="Resources\Pokemon_bdd\521.png" />
+    <None Include="Resources\Pokemon_bdd\520.png" />
+    <None Include="Resources\Pokemon_bdd\519.png" />
+    <None Include="Resources\Pokemon_bdd\518.png" />
+    <None Include="Resources\Pokemon_bdd\517.png" />
+    <None Include="Resources\Pokemon_bdd\510.png" />
+    <None Include="Resources\Pokemon_bdd\509.png" />
+    <None Include="Resources\Pokemon_bdd\479.png" />
+    <None Include="Resources\Pokemon_bdd\478.png" />
+    <None Include="Resources\Pokemon_bdd\477.png" />
+    <None Include="Resources\Pokemon_bdd\475.png" />
+    <None Include="Resources\Pokemon_bdd\473.png" />
+    <None Include="Resources\Pokemon_bdd\471.png" />
+    <None Include="Resources\Pokemon_bdd\470.png" />
+    <None Include="Resources\Pokemon_bdd\468.png" />
+    <None Include="Resources\Pokemon_bdd\464.png" />
+    <None Include="Resources\Pokemon_bdd\461.png" />
+    <None Include="Resources\Pokemon_bdd\460.png" />
+    <None Include="Resources\Pokemon_bdd\459.png" />
+    <None Include="Resources\Pokemon_bdd\458.png" />
+    <None Include="Resources\Pokemon_bdd\454.png" />
+    <None Include="Resources\Pokemon_bdd\453.png" />
+    <None Include="Resources\Pokemon_bdd\452.png" />
+    <None Include="Resources\Pokemon_bdd\451.png" />
+    <None Include="Resources\Pokemon_bdd\450.png" />
+    <None Include="Resources\Pokemon_bdd\449.png" />
+    <None Include="Resources\Pokemon_bdd\448.png" />
+    <None Include="Resources\Pokemon_bdd\447.png" />
+    <None Include="Resources\Pokemon_bdd\446.png" />
+    <None Include="Resources\Pokemon_bdd\439.png" />
+    <None Include="Resources\Pokemon_bdd\438.png" />
+    <None Include="Resources\Pokemon_bdd\437.png" />
+    <None Include="Resources\Pokemon_bdd\436.png" />
+    <None Include="Resources\Pokemon_bdd\435.png" />
+    <None Include="Resources\Pokemon_bdd\434.png" />
+    <None Include="Resources\Pokemon_bdd\426.png" />
+    <None Include="Resources\Pokemon_bdd\425.png" />
+    <None Include="Resources\Pokemon_bdd\423.png" />
+    <None Include="Resources\Pokemon_bdd\422.png" />
+    <None Include="Resources\Pokemon_bdd\421.png" />
+    <None Include="Resources\Pokemon_bdd\420.png" />
+    <None Include="Resources\Pokemon_bdd\416.png" />
+    <None Include="Resources\Pokemon_bdd\415.png" />
+    <None Include="Resources\Pokemon_bdd\407.png" />
+    <None Include="Resources\Pokemon_bdd\406.png" />
+    <None Include="Resources\Pokemon_bdd\362.png" />
+    <None Include="Resources\Pokemon_bdd\361.png" />
+    <None Include="Resources\Pokemon_bdd\360.png" />
+    <None Include="Resources\Pokemon_bdd\356.png" />
+    <None Include="Resources\Pokemon_bdd\355.png" />
+    <None Include="Resources\Pokemon_bdd\350.png" />
+    <None Include="Resources\Pokemon_bdd\349.png" />
+    <None Include="Resources\Pokemon_bdd\344.png" />
+    <None Include="Resources\Pokemon_bdd\343.png" />
+    <None Include="Resources\Pokemon_bdd\342.png" />
+    <None Include="Resources\Pokemon_bdd\341.png" />
+    <None Include="Resources\Pokemon_bdd\340.png" />
+    <None Include="Resources\Pokemon_bdd\339.png" />
+    <None Include="Resources\Pokemon_bdd\338.png" />
+    <None Include="Resources\Pokemon_bdd\337.png" />
+    <None Include="Resources\Pokemon_bdd\330.png" />
+    <None Include="Resources\Pokemon_bdd\329.png" />
+    <None Include="Resources\Pokemon_bdd\328.png" />
+    <None Include="Resources\Pokemon_bdd\324.png" />
+    <None Include="Resources\Pokemon_bdd\321.png" />
+    <None Include="Resources\Pokemon_bdd\320.png" />
+    <None Include="Resources\Pokemon_bdd\315.png" />
+    <None Include="Resources\Pokemon_bdd\310.png" />
+    <None Include="Resources\Pokemon_bdd\309.png" />
+    <None Include="Resources\Pokemon_bdd\303.png" />
+    <None Include="Resources\Pokemon_bdd\302.png" />
+    <None Include="Resources\Pokemon_bdd\292.png" />
+    <None Include="Resources\Pokemon_bdd\291.png" />
+    <None Include="Resources\Pokemon_bdd\290.png" />
+    <None Include="Resources\Pokemon_bdd\282.png" />
+    <None Include="Resources\Pokemon_bdd\281.png" />
+    <None Include="Resources\Pokemon_bdd\280.png" />
+    <None Include="Resources\Pokemon_bdd\279.png" />
+    <None Include="Resources\Pokemon_bdd\278.png" />
+    <None Include="Resources\Pokemon_bdd\275.png" />
+    <None Include="Resources\Pokemon_bdd\274.png" />
+    <None Include="Resources\Pokemon_bdd\273.png" />
+    <None Include="Resources\Pokemon_bdd\272.png" />
+    <None Include="Resources\Pokemon_bdd\271.png" />
+    <None Include="Resources\Pokemon_bdd\270.png" />
+    <None Include="Resources\Pokemon_bdd\264ga.png" />
+    <None Include="Resources\Pokemon_bdd\263ga.png" />
+    <None Include="Resources\Pokemon_bdd\248.png" />
+    <None Include="Resources\Pokemon_bdd\247.png" />
+    <None Include="Resources\Pokemon_bdd\246.png" />
+    <None Include="Resources\Pokemon_bdd\237.png" />
+    <None Include="Resources\Pokemon_bdd\236.png" />
+    <None Include="Resources\Pokemon_bdd\226.png" />
+    <None Include="Resources\Pokemon_bdd\225.png" />
+    <None Include="Resources\Pokemon_bdd\224.png" />
+    <None Include="Resources\Pokemon_bdd\223.png" />
+    <None Include="Resources\Pokemon_bdd\222ga.png" />
+    <None Include="Resources\Pokemon_bdd\221.png" />
+    <None Include="Resources\Pokemon_bdd\220.png" />
+    <None Include="Resources\Pokemon_bdd\215.png" />
+    <None Include="Resources\Pokemon_bdd\213.png" />
+    <None Include="Resources\Pokemon_bdd\211.png" />
+    <None Include="Resources\Pokemon_bdd\208.png" />
+    <None Include="Resources\Pokemon_bdd\202.png" />
+    <None Include="Resources\Pokemon_bdd\197.png" />
+    <None Include="Resources\Pokemon_bdd\196.png" />
+    <None Include="Resources\Pokemon_bdd\195.png" />
+    <None Include="Resources\Pokemon_bdd\194.png" />
+    <None Include="Resources\Pokemon_bdd\185.png" />
+    <None Include="Resources\Pokemon_bdd\182.png" />
+    <None Include="Resources\Pokemon_bdd\178.png" />
+    <None Include="Resources\Pokemon_bdd\177.png" />
+    <None Include="Resources\Pokemon_bdd\176.png" />
+    <None Include="Resources\Pokemon_bdd\175.png" />
+    <None Include="Resources\Pokemon_bdd\173.png" />
+    <None Include="Resources\Pokemon_bdd\172.png" />
+    <None Include="Resources\Pokemon_bdd\171.png" />
+    <None Include="Resources\Pokemon_bdd\170.png" />
+    <None Include="Resources\Pokemon_bdd\164.png" />
+    <None Include="Resources\Pokemon_bdd\163.png" />
+    <None Include="Resources\Pokemon_bdd\143.png" />
+    <None Include="Resources\Pokemon_bdd\136.png" />
+    <None Include="Resources\Pokemon_bdd\134.png" />
+    <None Include="Resources\Pokemon_bdd\133.png" />
+    <None Include="Resources\Pokemon_bdd\132.png" />
+    <None Include="Resources\Pokemon_bdd\131.png" />
+    <None Include="Resources\Pokemon_bdd\130.png" />
+    <None Include="Resources\Pokemon_bdd\129.png" />
+    <None Include="Resources\Pokemon_bdd\122ga.png" />
+    <None Include="Resources\Pokemon_bdd\119.png" />
+    <None Include="Resources\Pokemon_bdd\118.png" />
+    <None Include="Resources\Pokemon_bdd\112.png" />
+    <None Include="Resources\Pokemon_bdd\111.png" />
+    <None Include="Resources\Pokemon_bdd\110ga.png" />
+    <None Include="Resources\Pokemon_bdd\109.png" />
+    <None Include="Resources\Pokemon_bdd\107.png" />
+    <None Include="Resources\Pokemon_bdd\106.png" />
+    <None Include="Resources\Pokemon_bdd\99.png" />
+    <None Include="Resources\Pokemon_bdd\98.png" />
+    <None Include="Resources\Pokemon_bdd\95.png" />
+    <None Include="Resources\Pokemon_bdd\94.png" />
+    <None Include="Resources\Pokemon_bdd\93.png" />
+    <None Include="Resources\Pokemon_bdd\92.png" />
+    <None Include="Resources\Pokemon_bdd\91.png" />
+    <None Include="Resources\Pokemon_bdd\90.png" />
+    <None Include="Resources\Pokemon_bdd\83ga.png" />
+    <None Include="Resources\Pokemon_bdd\78ga.png" />
+    <None Include="Resources\Pokemon_bdd\77ga.png" />
+    <None Include="Resources\Pokemon_bdd\68.png" />
+    <None Include="Resources\Pokemon_bdd\67.png" />
+    <None Include="Resources\Pokemon_bdd\66.png" />
+    <None Include="Resources\Pokemon_bdd\59.png" />
+    <None Include="Resources\Pokemon_bdd\58.png" />
+    <None Include="Resources\Pokemon_bdd\53.png" />
+    <None Include="Resources\Pokemon_bdd\52ga.png" />
+    <None Include="Resources\Pokemon_bdd\51.png" />
+    <None Include="Resources\Pokemon_bdd\50.png" />
+    <None Include="Resources\Pokemon_bdd\45.png" />
+    <None Include="Resources\Pokemon_bdd\44.png" />
+    <None Include="Resources\Pokemon_bdd\43.png" />
+    <None Include="Resources\Pokemon_bdd\38.png" />
+    <None Include="Resources\Pokemon_bdd\37.png" />
+    <None Include="Resources\Pokemon_bdd\36.png" />
+    <None Include="Resources\Pokemon_bdd\35.png" />
+    <None Include="Resources\Pokemon_bdd\26.png" />
+    <None Include="Resources\Pokemon_bdd\25.png" />
+    <None Include="Resources\Pokemon_bdd\12.png" />
+    <None Include="Resources\Pokemon_bdd\11.png" />
+    <None Include="Resources\Pokemon_bdd\10.png" />
+    <None Include="Resources\Pokemon_bdd\6.png" />
+    <None Include="Resources\Pokemon_bdd\5.png" />
+    <None Include="Resources\Pokemon_bdd\4.png" />
+    <None Include="Resources\images.png" />
+    <None Include="Resources\iconePokeballRouge.png" />
+    <None Include="Resources\iconePokeballJaune.png" />
+    <None Include="Resources\iconePokeballBleu.png" />
+    <None Include="Resources\iconePokeball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="MetroFramework">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="MetroFramework.Design">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="MetroFramework.Fonts">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="XanderUI">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Ce projet fait référence à des packages NuGet qui sont manquants sur cet ordinateur. Utilisez l'option de restauration des packages NuGet pour les télécharger. Pour plus d'informations, consultez http://go.microsoft.com/fwlink/?LinkID=322105. Le fichier manquant est : {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.112.0\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.112.0\build\net46\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.112.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.112.0\build\net46\System.Data.SQLite.Core.targets')" />
+</Project>
